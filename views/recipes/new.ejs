@@ -1,5 +1,25 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-<h1>New Works!</h1>
+<h1><%= title %> </h1>
+<h2>
+  <form action="/recipes" method="POST">
 
+    <label for="name-input">Recipe Name:</label>
+    <input type="text" name="name" id="name-input" autocomplete="off">
+
+    <label for="difficulty-select">Select Difficulty</label>
+    <select name="difficulty" id="difficulty-select">
+      <option>Easy</option>
+      <option>Hard</option>
+      <option>Medium</option>
+    </select>
+
+    <label for="cuisine-input">Cuisine:</label>
+    <input type="text" name="cuisine" id="cuisine-input" autocomplete="off">
+
+    <label for="easy-checkbox">Tasty?:</label>
+    <input type="checkbox" name="tasty" checked id="easy-checkbox">
+
+  </form>
+</h2>
 <%- include('../partials/footer') %>

@@ -6,10 +6,10 @@ const recipeSchema = new Schema({
   name: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   Difficulty: String,
-  Time: String, 
+  Time: Number, 
   Cuisine: String,
   Tasty: Boolean,
-  Ingredients: [{type: Schema.Types.ObjectId, ref: "Profile"}], 
+  // Ingredients: [{type: Schema.Types.ObjectId, ref: "Profile"}], 
   // comments: [commentSchema]
 }, {
   timestamps: true
