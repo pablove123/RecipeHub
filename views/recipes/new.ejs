@@ -10,16 +10,18 @@
     <label for="difficulty-select">Select Difficulty</label>
     <select name="difficulty" id="difficulty-select">
       <option>Easy</option>
-      <option>Hard</option>
       <option>Medium</option>
+      <option>Hard</option>
     </select>
 
     <label for="cuisine-input">Cuisine:</label>
     <input type="text" name="cuisine" id="cuisine-input" autocomplete="off">
+    <label for="time-input">Time Needed:</label>
+    <input type="text" name="time" id="time-input" autocomplete="off">
 
     <label for="easy-checkbox">Tasty?:</label>
     <input type="checkbox" name="tasty" checked id="easy-checkbox">
-
+    <button type="submit"> Add Recipe</button>
   </form>
 </h2>
 <%- include('../partials/footer') %>

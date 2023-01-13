@@ -5,10 +5,11 @@ const Schema = mongoose.Schema
 const recipeSchema = new Schema({
   name: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-  Difficulty: String,
-  Time: Number, 
-  Cuisine: String,
-  Tasty: Boolean,
+  difficulty: {type: String,
+    enum: ["Easy", "Medium", "Hard"]},
+  time: Number, 
+  cuisine: String,
+  tasty: Boolean,
   // Ingredients: [{type: Schema.Types.ObjectId, ref: "Profile"}], 
   // comments: [commentSchema]
 }, {
