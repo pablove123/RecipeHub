@@ -26,10 +26,28 @@ function index(req,res){
       title: "All Recipes"
     })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes/new')
+  })
+}
+
+function show(req,res){
+  Recipe.findById(req.params.id)
+  .then(recipe=>{
+    res.render("recipes/show",{ 
+    recipe, 
+    title: "Recipe Details"})
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes/new')
+  })
 }
 
 export {
   newMovie as new, 
   create, 
-  index
+  index, 
+  show
 }
