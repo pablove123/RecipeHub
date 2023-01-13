@@ -18,7 +18,18 @@ function create(req,res){
   })
 }
 
+function index(req,res){
+  Recipe.find({})
+  .then(recipes=>{
+    res.render("recipes", {
+      recipes, 
+      title: "All Recipes"
+    })
+  })
+}
+
 export {
   newMovie as new, 
-  create
+  create, 
+  index
 }
