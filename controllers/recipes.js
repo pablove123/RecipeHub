@@ -37,7 +37,8 @@ function show(req,res){
   .then(recipe=>{
     res.render("recipes/show",{ 
     recipe, 
-    title: "Recipe Details"})
+    title: "Recipe Details"
+  })
   })
   .catch(err => {
     console.log(err)

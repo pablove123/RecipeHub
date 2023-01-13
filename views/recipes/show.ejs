@@ -1,1 +1,13 @@
-<h1>WORKS</h1>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<h1>Recipe Details</h1>
+<section>
+<div>Dish Name: <%= recipe.Name %> </div>
+<div>Difficulty Level: <%= recipe.difficulty %> </div>
+<div>Time Needed: <%= recipe.time %> minutes </div>
+<div>Tasty? <%= recipe.tasty ? "Certified Tasty" : "Not Very Tasty" %> </div>
+<div>Cuisine Type: <%= recipe.cuisine %> </div>
+
+
+</section>
+<%- include('../partials/footer') %>
