@@ -10,11 +10,11 @@ function create(req,res){
   req.body.tasty = !!req.body.tasty
   Recipe.create(req.body)
   .then(recipe =>{
-    res.redirect("/recipes/new")
+    res.redirect("/recipes")
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/recipes/new')
+    res.redirect('/recipes')
   })
 }
 
@@ -83,6 +83,25 @@ function deleteRecipe(req,res){
   })
 }
 
+function createComment(req,res){
+  Recipe.findById(req.params.id)
+  .then(recipe =>{
+    recipe.comments.push(req.body)
+    recipe.save()
+    .then(()=>{
+      res.redirect(`/recipes/${recipe._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/recipes')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes')
+  })
+}
+
 export {
   newMovie as new, 
   create, 
@@ -90,5 +109,6 @@ export {
   show, 
   edit, 
   update, 
-  deleteRecipe as delete
+  deleteRecipe as delete,
+  createComment
 }

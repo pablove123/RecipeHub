@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import * as recipeCtrl from "../controllers/recipes.js"
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
@@ -8,8 +9,9 @@ router.get('/new', recipeCtrl.new)
 router.get('/:id', recipeCtrl.show)
 router.get('/:id/edit', recipeCtrl.edit)
 router.post("/", recipeCtrl.create)
+router.post("/:id/comments", recipeCtrl.createComment)
 router.put("/:id", recipeCtrl.update)
-router.delete("/:id", recipeCtrl.delete)
+router.delete("/:id",recipeCtrl.delete)
 
 export {
   router
