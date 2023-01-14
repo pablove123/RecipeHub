@@ -60,10 +60,23 @@ function edit(req,res){
   })
 }
 
+function update(req,res){
+  req.body.tasty = !!req.body.tasty
+  Recipe.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  .then(recipe =>{
+    res.redirect(`/recipes/${recipe._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes/new')
+  })
+}
+
 export {
   newMovie as new, 
   create, 
   index, 
   show, 
-  edit
+  edit, 
+  update
 }
