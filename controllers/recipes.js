@@ -72,11 +72,23 @@ function update(req,res){
   })
 }
 
+function deleteRecipe(req,res){
+  Recipe.findByIdAndDelete(req.params.id)
+  .then(recipe =>{
+    res.redirect("/recipes")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes')
+  })
+}
+
 export {
   newMovie as new, 
   create, 
   index, 
   show, 
   edit, 
-  update
+  update, 
+  deleteRecipe as delete
 }
