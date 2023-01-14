@@ -1,8 +1,8 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-<h1>Recipe Details</h1>
+<h1>Recipe Details - <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a></h1>
 <section>
-<div>Dish Name: <%= recipe.Name %> </div>
+<div>Dish Name: <%= recipe.name %> </div>
 <div>Difficulty Level: <%= recipe.difficulty %> </div>
 <div>Time Needed: <%= recipe.time %> minutes </div>
 <div>Tasty? <%= recipe.tasty ? "Certified Tasty" : "Not Very Tasty" %> </div>

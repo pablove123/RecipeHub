@@ -9,7 +9,7 @@ function newMovie(req,res){
 function create(req,res){
   req.body.tasty = !!req.body.tasty
   Recipe.create(req.body)
-  .then(recipe=>{
+  .then(recipe =>{
     res.redirect("/recipes/new")
   })
   .catch(err => {
@@ -46,9 +46,24 @@ function show(req,res){
   })
 }
 
+function edit(req,res){
+  Recipe.findById(req.params.id)
+  .then(recipe=>{
+    res.render(`recipes/edit`, {
+      recipe,
+      title: "Edit Movie"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes/new')
+  })
+}
+
 export {
   newMovie as new, 
   create, 
   index, 
-  show
+  show, 
+  edit
 }
