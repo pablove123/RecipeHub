@@ -1,5 +1,10 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <h1><%= title %> </h1>
-
+  <form action="/ingredients" method="POST">
+    <input type="text" name="name">
+    <button type="submit">Create Ingredient</button>
+  </form>
+  <h3>All Ingredients</h3>
+    <li> <%= ingredient.name %> </li>
 <%- include('../partials/footer') %>
