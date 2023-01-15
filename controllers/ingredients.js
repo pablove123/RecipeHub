@@ -9,7 +9,6 @@ function create(req,res){
   Ingredient.create(req.body)
   .then(ingredient =>{
     res.render("ingredients/new", {
-      ingredient:ingredient, 
       title: "Add Ingredient"
     })
   })
@@ -19,7 +18,34 @@ function create(req,res){
   })
 }
 
+function index(req,res){
+  Ingredient.find({})
+  .then(ingredients=>{
+    res.render("ingredients", {
+      ingredients, 
+      title: "All Ingredients"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/ingredients/new')
+  })
+}
+
+function deleteIngredient(req,res){
+  Ingredient.findByIdAndDelete(req.params.id)
+  .then(ingredient =>{
+    res.redirect("/ingredients")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/ingredients')
+  })
+}
+
 export {
   newIngredient as new, 
-  create
+  create, 
+  index, 
+  deleteIngredient as delete
 }
