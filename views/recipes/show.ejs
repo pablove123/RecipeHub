@@ -13,5 +13,10 @@
   <input type="text" name="comment">
   <button type="submit">Add Comment</button>
 </form></h4>
+<h4>
+  <% recipe.comments.forEach(function(comment) { %> 
+      <li><%=comment.comment %> </li>
+    <% }) %> 
+</h4>
 </section>
 <%- include('../partials/footer') %>
