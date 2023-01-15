@@ -1,6 +1,6 @@
 import { Recipe } from "../models/recipe.js"
 
-function newMovie(req,res){
+function newRecipe(req,res){
   res.render("recipes/new", {
     title: "Add Recipe"
   })
@@ -103,7 +103,7 @@ function createComment(req,res){
 }
 
 export {
-  newMovie as new, 
+  newRecipe as new, 
   create, 
   index, 
   show, 
