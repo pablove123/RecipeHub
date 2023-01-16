@@ -43,9 +43,11 @@ function deleteIngredient(req,res){
   })
 }
 
+
+
 export {
   newIngredient as new, 
   create, 
   index, 
-  deleteIngredient as delete
+  deleteIngredient as delete, 
 }
