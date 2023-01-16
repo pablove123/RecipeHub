@@ -1,4 +1,5 @@
 import { Recipe } from "../models/recipe.js"
+import { Ingredient } from "../models/ingredient.js"
 
 function newRecipe(req,res){
   res.render("recipes/new", {
@@ -36,10 +37,15 @@ function index(req,res){
 function show(req,res){
   Recipe.findById(req.params.id)
   .populate("owner")
+  .populate("ingredients")
   .then(recipe=>{
-    res.render("recipes/show",{ 
-    recipe, 
-    title: "Recipe Details"
+    Ingredient.find({})
+    .then(ingredients => {
+      res.render("recipes/show",{ 
+      recipe, 
+      title: "Recipe Details",
+      ingredients
+    })
   })
   })
   .catch(err => {
@@ -107,6 +113,25 @@ function createComment(req,res){
   })
 }
 
+function addIngredient(req, res) {
+  Recipe.findById(req.params.id)
+  .then(recipe => {
+    recipe.ingredients.push(req.body.ingredientId)
+    recipe.save()
+    .then(() => {
+      res.redirect(`/recipes/${recipe._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/recipes')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes')
+  })
+}
+
 export {
   newRecipe as new, 
   create, 
@@ -115,5 +140,6 @@ export {
   edit, 
   update, 
   deleteRecipe as delete,
-  createComment
+  createComment, 
+  addIngredient
 }

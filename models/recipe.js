@@ -16,7 +16,7 @@ const recipeSchema = new Schema({
   time: Number, 
   cuisine: String,
   tasty: Boolean,
-  // Ingredients: [{type: Schema.Types.ObjectId, ref: "Profile"}], 
+  ingredients: [{type: Schema.Types.ObjectId, ref: "Ingredient"}], 
   comments: [commentSchema]
 }, {
   timestamps: true

@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/show.css" />
 <%- include('../partials/nav') %>
 <h1>Recipe Details - <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a></h1>
 <section>
@@ -12,6 +13,16 @@
 <div>Time Needed: <%= recipe.time %> minutes </div>
 <div>Tasty? <%= recipe.tasty ? "Certified Tasty" : "Not Very Tasty" %> </div>
 <div>Cuisine Type: <%= recipe.cuisine %> </div>
+
+<form id="add-ingredients" action="/ingredients/<%= recipe._id %>/ingredients" method="POST">
+  <select name="ingredientId">
+    <% ingredients.forEach(ingredient => { %>
+      <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Add ingredient to recipe</button>
+</form>
+
 <h3>Comments:</h3>
 
 <h4> <form action="/recipes/<%= recipe._id %>/comments" method="POST">
