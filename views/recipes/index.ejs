@@ -8,7 +8,7 @@
     <li> <form 
       action="/recipes/<%= recipe._id %>?_method=DELETE"
       method="POST">
-      
+      <%= recipe.owner %> 
       <a href="/recipes/<%= recipe._id %>"><%= recipe.name %></a>     
       
       <button type="submit">X</button>

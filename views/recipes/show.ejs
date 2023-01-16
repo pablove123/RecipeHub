@@ -2,6 +2,7 @@
 <%- include('../partials/nav') %>
 <h1>Recipe Details - <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a></h1>
 <section>
+  <div>User: <%= recipe.owner.name %> </div>
 <div>Dish Name: <%= recipe.name %> </div>
 <div>Difficulty Level: <%= recipe.difficulty %> </div>
 <div>Time Needed: <%= recipe.time %> minutes </div>

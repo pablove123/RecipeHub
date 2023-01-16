@@ -7,6 +7,7 @@ function newRecipe(req,res){
 }
 
 function create(req,res){
+  req.body.owner = req.user.profile._id
   req.body.tasty = !!req.body.tasty
   Recipe.create(req.body)
   .then(recipe =>{
@@ -34,6 +35,7 @@ function index(req,res){
 
 function show(req,res){
   Recipe.findById(req.params.id)
+  .populate("owner")
   .then(recipe=>{
     res.render("recipes/show",{ 
     recipe, 
@@ -59,18 +61,6 @@ function edit(req,res){
     res.redirect('/recipes/new')
   })
 }
-
-// function update(req,res){
-//   req.body.tasty = !!req.body.tasty
-//   Recipe.findByIdAndUpdate(req.params.id, req.body, {new:true})
-//   .then(recipe =>{
-//     res.redirect(`/recipes/${recipe._id}`)
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/recipes/new')
-//   })
-// }
 function update(req, res) {
   Recipe.findById(req.params.id)
   .then(recipe => {

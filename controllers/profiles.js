@@ -16,6 +16,7 @@ function index(req, res) {
 
 function show(req, res) {
   Profile.findById(req.params.id)
+  .populate("owner")
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
     res.render("profiles/show", {
