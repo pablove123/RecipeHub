@@ -60,16 +60,31 @@ function edit(req,res){
   })
 }
 
-function update(req,res){
-  req.body.tasty = !!req.body.tasty
-  Recipe.findByIdAndUpdate(req.params.id, req.body, {new:true})
-  .then(recipe =>{
-    res.redirect(`/recipes/${recipe._id}`)
+// function update(req,res){
+//   req.body.tasty = !!req.body.tasty
+//   Recipe.findByIdAndUpdate(req.params.id, req.body, {new:true})
+//   .then(recipe =>{
+//     res.redirect(`/recipes/${recipe._id}`)
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/recipes/new')
+//   })
+// }
+function update(req, res) {
+  Recipe.findById(req.params.id)
+  .then(recipe => {
+    if (recipe.owner.equals(req.user.profile._id)) {
+      req.body.tasty = !!req.body.tasty
+      recipe.updateOne(req.body)
+      .then(()=> {
+        res.redirect(`/recipe/${recipe._id}`)
+      })
+    } else {
+      res.redirect("/recipes")
+    }
   })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/recipes/new')
-  })
+  
 }
 
 function deleteRecipe(req,res){

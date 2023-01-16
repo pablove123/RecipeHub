@@ -10,7 +10,7 @@ router.get('/:id', recipeCtrl.show)
 router.get('/:id/edit', recipeCtrl.edit)
 router.post("/", recipeCtrl.create)
 router.post("/:id/comment", recipeCtrl.createComment)
-router.put("/:id", recipeCtrl.update)
+router.put("/:id", isLoggedIn, recipeCtrl.update)
 router.delete("/:id",recipeCtrl.delete)
 
 export {
