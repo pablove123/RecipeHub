@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const commentSchema = new Schema({
-  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
+  owner: {type: Schema.Types.ObjectId, ref: "Profile", strictPopulate: false},
   comment: String, 
   rating: Number, 
 })
