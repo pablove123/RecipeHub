@@ -132,6 +132,23 @@ function addIngredient(req, res) {
   })
 }
 
+function log(req,res){
+  res.render("recipes/log", {
+    title: "Please Log in"
+  })
+}
+
+// function deleteIngredient(req, res) {
+//   Recipe.findById(req.params.id)
+//   .then(recipe => {
+//     recipe.ingredients.remove({_id: req.params.id})
+//     recipe.save()
+//     .then(()=> {
+//       res.redirect(`/recipes/${recipe._id}`)
+//     })
+//   })
+// }
+
 export {
   newRecipe as new, 
   create, 
@@ -141,5 +158,7 @@ export {
   update, 
   deleteRecipe as delete,
   createComment, 
-  addIngredient
+  addIngredient, 
+  log
+  // deleteIngredient
 }

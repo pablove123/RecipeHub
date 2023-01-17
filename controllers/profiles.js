@@ -10,11 +10,12 @@ function index(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/recipes')
+    res.redirect('/error')
   })
 }
 
 function show(req, res) {
+  console.log("SLay")
   Profile.findById(req.params.id)
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
@@ -23,6 +24,10 @@ function show(req, res) {
       profile,
       isSelf,
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/error')
   })
 }
 
