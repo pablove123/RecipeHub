@@ -14,7 +14,7 @@ router.post("/:id/comment", recipeCtrl.createComment)
 router.post("/:id/ingredients", recipeCtrl.addIngredient)
 router.put("/:id", isLoggedIn, recipeCtrl.update)
 router.delete("/:id",recipeCtrl.delete)
-// router.delete("/:id/ingredients/:id",recipeCtrl.deleteIngredient)
+router.delete("/:recipeId/ingredients/:ingredientId",recipeCtrl.deleteIngredient)
 
 export {
   router

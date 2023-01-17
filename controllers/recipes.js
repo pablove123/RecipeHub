@@ -138,16 +138,17 @@ function log(req,res){
   })
 }
 
-// function deleteIngredient(req, res) {
-//   Recipe.findById(req.params.id)
-//   .then(recipe => {
-//     recipe.ingredients.remove({_id: req.params.id})
-//     recipe.save()
-//     .then(()=> {
-//       res.redirect(`/recipes/${recipe._id}`)
-//     })
-//   })
-// }
+function deleteIngredient(req, res) {
+  console.log(req.params)
+  Recipe.findById(req.params.recipeId)
+  .then(recipe => {
+    recipe.ingredients.remove({_id: req.params.ingredientId})
+    recipe.save()
+    .then(()=> {
+      res.redirect(`/recipes/${recipe._id}`)
+    })
+  })
+}
 
 export {
   newRecipe as new, 
@@ -159,6 +160,6 @@ export {
   deleteRecipe as delete,
   createComment, 
   addIngredient, 
-  log
-  // deleteIngredient
+  log, 
+  deleteIngredient
 }
