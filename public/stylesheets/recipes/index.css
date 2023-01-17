@@ -1,0 +1,47 @@
+
+
+@media only screen and (min-width: 600px) {
+  h2{
+    font-size: 60px;
+    text-align: center;
+    align-items: center;
+  }
+  body{
+    text-align:center;
+  }
+  ul{
+    display: inline-block;
+    list-style-type:square
+  }
+  .recipe{
+    font-size: 30px;
+  }
+  .owner{
+    font-size: 20px;
+  }
+
+  form > button{
+    background-color: #42213D;
+    color: #F3E8EE
+  }
+  
+  nav {
+    background-color: #42213D;
+    color: #F3E8EE;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    min-height: 60px;
+  
+  }
+  nav > a {
+    margin: 10px 30px;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F3E8EE
+  }
+
+}

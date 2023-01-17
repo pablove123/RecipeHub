@@ -1,12 +1,14 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/recipes/show.css" />
 <%- include('../partials/nav') %>
-<h1>Recipe Details - <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a></h1>
-<section>
-  <div>Author: <a href="/profiles/<%= recipe.owner._id %>"><%= recipe.owner.name %> </a></div>
-  <img 
-      class="profile-avatar"
-      src="<%= recipe.owner.avatar %>" 
-    >
+<div class="author">Author:  <a href="/profiles/<%= recipe.owner._id %>"><%= recipe.owner.name %> </a>
+<!-- <img 
+    class="profile-avatar"
+    src="<%= recipe.owner.avatar %>" >  -->
+  </div>
+<h1>Recipe Details:  <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a></h1>
+
+<section class="details">
 <div>Dish Name: <%= recipe.name %> </div>
 <div>Difficulty Level: <%= recipe.difficulty %> </div>
 <div>Time Needed: <%= recipe.time %> minutes </div>
@@ -37,7 +39,8 @@
   </select>
   <button type="submit">Add ingredient to recipe</button>
 </form>
-
+</section>
+ <div class="comment">
 <h3>Comments:</h3>
 
 <h4> <form action="/recipes/<%= recipe._id %>/comments" method="POST">
@@ -46,8 +49,8 @@
 </form></h4>
 <h4>
   <% recipe.comments.forEach(function(comment) { %> 
-      <li><%=comment.comment %> </li>
+      <li><%=comment.comment %> - <%= recipe.owner.name  %>  </li>
     <% }) %> 
 </h4>
-</section>
+</div>
 <%- include('../partials/footer') %>

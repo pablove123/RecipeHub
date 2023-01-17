@@ -1,17 +1,17 @@
 <%- include('../partials/html-head') %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/stylesheets/recipes/index.css" />
 <%- include('../partials/nav') %>
-
-<h1>WORKS</h1>
 <h2>All Recipes</h2>
 <ul>
   <% recipes.forEach(recipe=>{ %> 
     <li> <form 
       action="/recipes/<%= recipe._id %>?_method=DELETE"
       method="POST">
-      <a href="/recipes/<%= recipe._id %>"><%= recipe.name %></a>     
-      -<%= recipe.owner.name %> 
+      <a href="/recipes/<%= recipe._id %>" class="recipe"><%= recipe.name %></a>     
+      - <span class="owner"><%= recipe.owner.name %></span>
       
-      <button type="submit">X</button>
+      <button type="submit">Delete Recipe</button>
       </form>
      </li>
     <% }) %> 

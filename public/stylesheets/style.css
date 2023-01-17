@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-}
+} */
 
 *::after {
   box-sizing: inherit;
@@ -24,12 +24,12 @@ nav {
 
 }
 
-main {
+ main {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
+} 
 
 .right {
   margin-left: auto;
