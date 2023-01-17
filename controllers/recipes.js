@@ -22,6 +22,7 @@ function create(req,res){
 
 function index(req,res){
   Recipe.find({})
+  .populate("owner")
   .then(recipes=>{
     res.render("recipes", {
       recipes, 
