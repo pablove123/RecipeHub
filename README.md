@@ -1,5 +1,5 @@
 # RecipeHub
-![alt text](/public/imagesfood 1/screenshot.png)
+![alt text](https://pbs.twimg.com/media/FmyMnDYagAEcpW6?format=jpg&name=small)
 ## [OPEN SITE HERE](https://recipehub.fly.dev/)
 
 ### Welcome to RecipeHub! A 

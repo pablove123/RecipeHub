@@ -6,7 +6,7 @@
   <form action="/recipes" method="POST">
 
     <label for="name-input">Recipe Name:</label>
-    <input type="text" name="name" id="name-input" autocomplete="off">
+    <input placeholder="Add Recipe Name Here" type="text" name="name" id="name-input" autocomplete="off">
     <br>
     <label for="difficulty-select">Select Difficulty</label>
     <select name="difficulty" id="difficulty-select">
@@ -16,7 +16,7 @@
     </select>
     <br>
     <label for="cuisine-input">Cuisine:</label>
-    <input type="text" name="cuisine" id="cuisine-input" autocomplete="off">
+    <input placeholder="Add Cuisine Name"  type="text" name="cuisine" id="cuisine-input" autocomplete="off">
     <br>
     <label for="time-input">Time Needed(in minutes):</label>
     <input type="text" name="time" id="time-input" autocomplete="off">
@@ -24,7 +24,7 @@
     <label for="easy-checkbox">Tasty?:</label>
     <input type="checkbox" name="tasty" checked id="easy-checkbox"> (check if tasty)
     <br>
-    <button type="submit"> Add Recipe</button>
+    <button id="addBtn" type="submit"> Add Recipe</button>
   </form>
 </h2>
 <%- include('../partials/footer') %>
