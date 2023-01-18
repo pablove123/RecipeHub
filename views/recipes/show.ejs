@@ -16,7 +16,15 @@
 <div>Cuisine Type: <strong><%= recipe.cuisine %> </strong></div>
 <div>Ingredients Needed:</div>
 <ul>
-  <ul>
+  <form id="add-ingredients" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
+    <select name="ingredientId">
+      <% ingredients.forEach(ingredient => { %>
+        <option value="<%= ingredient._id %>"><%= ingredient.name %>
+        </option>
+      <% }) %>
+    </select>
+    <button class="addIng" type="submit">Add ingredient to recipe</button>
+  </form>
     <% recipe.ingredients.forEach(ingredient => { %>
       <li class="lIng">
       <form 
@@ -28,21 +36,25 @@
     </form>
   </li>
     <% }) %>
-  </ul>
 </ul>
 
-<form id="add-ingredients" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
-  <select name="ingredientId">
-    <% ingredients.forEach(ingredient => { %>
-      <option value="<%= ingredient._id %>"><%= ingredient.name %></option>
-    <% }) %>
-  </select>
-  <button class="addIng" type="submit">Add ingredient to recipe</button>
-</form>
+<h2>Steps:</h3>
+  <form action="/recipes/<%= recipe._id %>/steps" method="POST">
+    <input type="text" name="step">
+    <button class="addCom" type="submit">Add Step</button>
+  </form>
+  <h3>
+    <ol>
+    <% recipe.steps.forEach(function(step) { %> 
+        <li class= "steps"> <%= step.step %> </li>
+        <%   %> 
+      <% }) %> 
+    </ol>
+  </h3>
 </section>
- <div class="comment">
-<h3>Comments:</h3>
 
+<div class="comment">
+<h3>Comments:</h3>
 <h4> <form action="/recipes/<%= recipe._id %>/comments" method="POST">
   <input type="text" name="comment">
   <button class="addCom" type="submit">Add Comment</button>

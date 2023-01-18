@@ -38,3 +38,6 @@ h1{
 .details{
   font-size: 20px;
 }
+ol{
+  display: inline-block;
+}

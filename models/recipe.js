@@ -8,6 +8,10 @@ const commentSchema = new Schema({
   rating: Number, 
 })
 
+const stepSchema = new Schema({
+  step: String, 
+})
+
 const recipeSchema = new Schema({
   name: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
@@ -17,7 +21,8 @@ const recipeSchema = new Schema({
   cuisine: String,
   tasty: Boolean,
   ingredients: [{type: Schema.Types.ObjectId, ref: "Ingredient"}], 
-  comments: [commentSchema]
+  comments: [commentSchema],
+  steps: [stepSchema]
 }, {
   timestamps: true
 })

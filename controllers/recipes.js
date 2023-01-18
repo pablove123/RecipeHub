@@ -151,6 +151,25 @@ function deleteIngredient(req, res) {
   })
 }
 
+function addStep(req,res){
+  Recipe.findById(req.params.id)
+  .then(recipe =>{
+    recipe.steps.push(req.body)
+    recipe.save()
+    .then(()=>{
+      res.redirect(`/recipes/${recipe._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/recipes')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/recipes')
+  })
+}
+
 export {
   newRecipe as new, 
   create, 
@@ -162,5 +181,6 @@ export {
   createComment, 
   addIngredient, 
   log, 
-  deleteIngredient
+  deleteIngredient, 
+  addStep
 }
