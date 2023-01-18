@@ -1,8 +1,8 @@
 # RecipeHub
-![alt text](/Pictures/screenshot.png)
-## [OPEN SITE HERE](https://mymoodymonster.netlify.app)
+![alt text](/public/imagesfood 1/screenshot.png)
+## [OPEN SITE HERE](https://recipehub.fly.dev/)
 
-### Have you ever wanted to take care of your very own monster? In this web browser game, you finally can! But watch out, your monster is known for being very moody. Keep track of multiple monster stats and have your monster love you forever!
+### Welcome to RecipeHub! A 
 
 
 #### Technologies Used 💻
