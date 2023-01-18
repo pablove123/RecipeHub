@@ -2,7 +2,7 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <h1>Hello, <%= user ? user.profile.name : "Guest" %></h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -10,7 +10,12 @@
         alt="<%= user.profile.name %> avatar"
       />
     </div>
-  <% } %>
+  <% }%>
+  <h2>Welcome to RecipeHub!
+  </h2>
+  <h3>View recipes posted by our users and even create your own. </h3>
+  <h4>test
+  </h4>
 </main>
 
 <%- include('./partials/footer') %>
