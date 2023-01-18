@@ -15,9 +15,9 @@
 - CSS
 
 #### Resources 💾
-- Art: Drawn using Pixilart.com
-- Sound Effects: SilverIllusionist,tonsil5, JarredGibb and bigmonmulgrew on freesound.org
-- Background Music: "Cheer up!" by Keys of Moon on chosic.com
+- Images: www.pexels.com
+- Font: Google Fonts
+
 
 #### Ice Box 🧊
 - [x] Create Comments
