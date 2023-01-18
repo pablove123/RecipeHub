@@ -39,16 +39,16 @@ main {
 } */
 nav > a {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #F3E8EE;
-  border: 2px solid  #F3E8EE;
+  border: 2px solid  #F3E8EE ;
   width:100%;
   line-height: 40px;
   padding-top: 5px;
-  padding-left: 20px
+  padding-left: 20px;
   padding-right: 20px
 }
 nav > a:hover{
@@ -70,4 +70,10 @@ h1, h3{
   font-size: 75px;
   text-align: center;
   font-weight: bolder;
+  color: #9f3842;
+}
+
+#recipeHub > a:visited { 
+  text-decoration: none; 
+  color: #9f3842; 
 }
