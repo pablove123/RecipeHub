@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/show.css" />
 <%- include('../partials/nav') %>
 
 <main>
@@ -9,7 +10,13 @@
       alt="<%= profile.name %>'s avatar"
     >
   </div>
-  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <h1>User's Name: <%=  profile.name %></h1>
+  <% let date = profile.createdAt %>
+  <% let dayDate = date.getDate() %>
+  <% let monthDate = date.getMonth()+ 1 %>
+  <% let yearDate = date.getFullYear() %></h1>
+  <h1>Member Since: <%=  monthDate%>/<%=  dayDate%>/<%=  yearDate%></h1>
+  
 </main>
 
 <%- include('../partials/footer') %>
