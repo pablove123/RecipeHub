@@ -1,5 +1,6 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
+<div class="body">
 <h1><%= title %> </h1>
 <h2>
   <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
@@ -29,4 +30,5 @@
     <button type="submit"> Update Recipe </button>
   </form>
 </h2>
+</div>
 <%- include('../partials/footer') %>

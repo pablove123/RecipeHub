@@ -2,13 +2,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/stylesheets/recipes/index.css" />
 <%- include('../partials/nav') %>
+<div class="body">
 <h2>All Recipes</h2>
 <ul>
   <% recipes.forEach(recipe=>{ %> 
     <li> <form 
       action="/recipes/<%= recipe._id %>?_method=DELETE"
       method="POST">
-      <a href="/recipes/<%= recipe._id %>" class="recipe"><%= recipe.name %></a>     
+      <a href="/recipes/<%= recipe._id %>" class="recipe"> <span class="recipe-name"><%= recipe.name %></span></a>     
       - <span class="owner"><%= recipe.owner.name %></span>
       
       <button type="submit">Delete Recipe</button>
@@ -16,6 +17,7 @@
      </li>
     <% }) %> 
 </ul>
+</div>
 
 
 <%- include('../partials/footer') %>

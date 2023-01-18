@@ -19,10 +19,16 @@
   .owner{
     font-size: 20px;
   }
+  ul{
+    font-family: 'Yanone Kaffeesatz';
+  }
 
   form > button{
     background-color: #42213D;
     color: #F3E8EE
+  }
+  .recipe-name{
+    font-size: 50px;
   }
   
   nav {
@@ -30,7 +36,6 @@
     color: #F3E8EE;
     display: flex;
     align-items: center;
-    padding: 10px;
     min-height: 60px;
   
   }
