@@ -1,56 +1,57 @@
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/recipes/show.css" />
 <%- include('../partials/nav') %>
-<div class="author">Author:  <a href="/profiles/<%= recipe.owner._id %>"><%= recipe.owner.name %> </a>
-<!-- <img 
-    class="profile-avatar"
-    src="<%= recipe.owner.avatar %>" >  -->
+<div class="recipe-details">
+  <div class="author">Author: 
+    <a href="/profiles/<%= recipe.owner._id %>"><%= recipe.owner.name %> </a>
   </div>
-<h1>Recipe Details:  <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a></h1>
+  <h1>Recipe Details:  <a href="/recipes/<%= recipe.id %>/edit">Edit Recipe</a></h1>
 
-<section class="details">
-<div>Dish Name: <strong><%= recipe.name %></strong> </div>
-<div>Difficulty Level: <strong> <%= recipe.difficulty %></strong> </div>
-<div>Time Needed: <strong><%= recipe.time %> minutes</strong>  </div>
-<div>Tasty? <strong><%= recipe.tasty ? "Certified Tasty" : "Not Very Tasty" %> </strong></div>
-<div>Cuisine Type: <strong><%= recipe.cuisine %> </strong></div>
-<div>Ingredients Needed:</div>
-<ul>
-  <form id="add-ingredients" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
-    <select name="ingredientId">
-      <% ingredients.forEach(ingredient => { %>
-        <option value="<%= ingredient._id %>"><%= ingredient.name %>
-        </option>
-      <% }) %>
-    </select>
-    <button class="addIng" type="submit">Add ingredient to recipe</button>
-  </form>
-    <% recipe.ingredients.forEach(ingredient => { %>
-      <li class="lIng">
-      <form 
-      action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id%>?_method=DELETE"
-      method="POST">
-      <a href="/recipes/<%= recipe._id %>"><%= ingredient.name %></a>     
-    
-      <button  class="addIng" type="submit">Delete</button>
+  <section class="details">
+  <div>Dish Name: <strong><%= recipe.name %></strong> </div>
+  <div>Difficulty Level: <strong> <%= recipe.difficulty %></strong> </div>
+  <div>Time Needed: <strong><%= recipe.time %> minutes</strong>  </div>
+  <div>Tasty? <strong><%= recipe.tasty ? "Certified Tasty" : "Not Very Tasty" %> </strong></div>
+  <div>Cuisine Type: <strong><%= recipe.cuisine %> </strong></div>
+  <div>Ingredients Needed:</div>
+  <ul>
+    <form id="add-ingredients" action="/recipes/<%= recipe._id %>/ingredients" method="POST">
+      <select name="ingredientId">
+        <% ingredients.forEach(ingredient => { %>
+          <option value="<%= ingredient._id %>"><%= ingredient.name %>
+          </option>
+        <% }) %>
+      </select>
+      <button class="addIng" type="submit">Add ingredient to recipe</button>
     </form>
-  </li>
-    <% }) %>
-</ul>
-
-<h2>Steps:</h3>
-  <form action="/recipes/<%= recipe._id %>/steps" method="POST">
-    <input type="text" name="step">
-    <button class="addCom" type="submit">Add Step</button>
-  </form>
-  <h3>
-    <ol>
-    <% recipe.steps.forEach(function(step) { %> 
-        <li class= "steps"> <%= step.step %> </li>
-        <%   %> 
-      <% }) %> 
-    </ol>
-  </h3>
+      <% recipe.ingredients.forEach(ingredient => { %>
+        <li class="lIng">
+        <form 
+        action="/recipes/<%= recipe._id %>/ingredients/<%= ingredient._id%>?_method=DELETE"
+        method="POST">
+        <%= ingredient.name %></a>     
+      
+        <button  class="addIng" type="submit">Delete</button>
+      </form>
+    </li>
+      <% }) %>
+  </ul>
+</div>
+ <div class="step-details">
+  <h2>Steps:</h3>
+    <form action="/recipes/<%= recipe._id %>/steps" method="POST">
+      <textarea placeholder="Type steps in order" type="text" name="step">
+      </textarea>
+      <button class="addCom" type="submit">Add Step</button>
+    <h3>
+      <ol>
+      <% recipe.steps.forEach(function(step) { %> 
+          <li class= "steps"> <%= step.step %> </li>
+          <%   %> 
+        <% }) %> 
+      </ol>
+    </h3>
+</div>
 </section>
 
 <div class="comment">
