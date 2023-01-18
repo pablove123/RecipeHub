@@ -1,5 +1,7 @@
 import { Profile } from '../models/profile.js'
 
+import { Recipe } from '../models/recipe.js'
+
 function index(req, res) {
   Profile.find({})
   .then(profiles => {
@@ -19,6 +21,7 @@ function show(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
+    
     res.render("profiles/show", {
       title: `${profile.name}'s profile`,
       profile,

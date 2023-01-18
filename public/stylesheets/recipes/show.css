@@ -13,3 +13,28 @@ h1{
 .comment{
   margin-left: 10%;
 }
+.comments{
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  width: fit-content
+}
+.addCom{
+  height: 30px;
+  border-radius: 10px;
+  background-color: #42213D;
+    color: #F3E8EE
+}
+.addIng{
+  height: 30px;
+  border-radius: 10px;
+  background-color: #42213D;
+    color: #F3E8EE
+}
+.lIng{
+  list-style: none;
+}
+.details{
+  font-size: 20px;
+}
