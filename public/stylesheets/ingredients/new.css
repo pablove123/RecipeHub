@@ -1,0 +1,22 @@
+h1{
+text-align: center;
+}
+h2{
+  text-align: center;
+  font-size: 30px;
+}
+h3{
+  margin-top:40px;
+  text-align: center;
+}
+button{
+  font-family:'Yanone Kaffeesatz'; 
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #42213D;
+  color: #F3E8EE;
+}
+button:hover{
+  background-color: #915d89 ;
+}

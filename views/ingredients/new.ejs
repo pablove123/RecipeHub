@@ -1,9 +1,15 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/ingredients/new.css" />
 <%- include('../partials/nav') %>
 <h1><%= title %> </h1>
+<h2>
   <form action="/ingredients" method="POST">
-    <input type="text" name="name">
+    <input placeholder="Ex. Ground Beef" type="text" name="name">
     <button type="submit">Create Ingredient</button>
   </form>
-  <a href="/ingredients"> View All Ingredients Added</a>
+</h2>
+<h3>
+  <a class="redirect" href="/ingredients"> View All Ingredients Added</a>
+</h3>
+
 <%- include('../partials/footer') %>
