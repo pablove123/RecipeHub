@@ -1,4 +1,4 @@
-# fly.toml file generated for recipehub on 2023-01-17T12:12:02-08:00
+# fly.toml file generated for recipehub on 2023-01-18T10:59:07-08:00
 
 app = "recipehub"
 kill_signal = "SIGINT"
