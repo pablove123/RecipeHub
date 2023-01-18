@@ -28,6 +28,11 @@ nav {
   flex-direction: column;
 } 
 
+.food-img{
+  width: 200px;
+  padding: 10px;
+  height: 200px;
+}
 .right {
   margin-left: auto;
 }
@@ -46,4 +51,7 @@ nav > a {
 }
 h2{
   font-size: 50px;
+}
+h1, h3{
+  font-family: 'Yanone Kaffeesatz'
 }
