@@ -6,6 +6,7 @@ function newIngredient(req,res){
   })
 }
 function create(req,res){
+  req.body.owner = req.user.profile._id
   Ingredient.create(req.body)
   .then(ingredient =>{
     res.render("ingredients/new", {
@@ -20,6 +21,7 @@ function create(req,res){
 
 function index(req,res){
   Ingredient.find({})
+  .populate("owner")
   .then(ingredients=>{
     res.render("ingredients", {
       ingredients, 

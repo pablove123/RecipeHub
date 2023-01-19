@@ -60,7 +60,7 @@ function edit(req,res){
   .then(recipe=>{
     res.render(`recipes/edit`, {
       recipe,
-      title: "Edit Recipe"
+      title: "Edit Movie"
     })
   })
   .catch(err => {
@@ -75,7 +75,7 @@ function update(req, res) {
       req.body.tasty = !!req.body.tasty
       recipe.updateOne(req.body)
       .then(()=> {
-        res.redirect(`/recipes`)
+        res.redirect(`/recipe/${recipe._id}`)
       })
     } else {
       res.redirect("/recipes")
@@ -96,6 +96,7 @@ function deleteRecipe(req,res){
 }
 
 function createComment(req,res){
+  req.body.owner = req.user.profile._id
   Recipe.findById(req.params.id)
   .then(recipe =>{
     recipe.comments.push(req.body)
@@ -139,8 +140,18 @@ function log(req,res){
   })
 }
 
+function deleteComment(req, res) {
+  Recipe.findById(req.params.recipeId)
+  .then(recipe => {
+    recipe.comments.remove({_id: req.params.commentId})
+    recipe.save()
+    .then(()=> {
+      res.redirect(`/recipes/${recipe._id}`)
+    })
+  })
+}
+
 function deleteIngredient(req, res) {
-  console.log(req.params)
   Recipe.findById(req.params.recipeId)
   .then(recipe => {
     recipe.ingredients.remove({_id: req.params.ingredientId})
@@ -182,5 +193,6 @@ export {
   addIngredient, 
   log, 
   deleteIngredient, 
-  addStep
+  addStep, 
+  deleteComment
 }

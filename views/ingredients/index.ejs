@@ -7,8 +7,10 @@
     <li><form 
       action="/ingredients/<%= ingredient._id %>?_method=DELETE"
       method="POST">
-      <%= ingredient.name %></a>    
+      <%= ingredient.name %></a>  
+      <% if (ingredient.owner.equals(user?.profile._id)) { %>
       <button type="submit">X</button>
+      <% } %> 
       </form></li>
     <% }) %> 
 </ul>
