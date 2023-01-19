@@ -3,15 +3,16 @@ h1{
   font-family: 'Yanone Kaffeesatz'
 }
 
-.author{
-  font-size: 40px;
+.r-details{
+  font-size: 25px;
   text-align: center;
   font-family: 'Yanone Kaffeesatz';
-  margin-top: 5%;
+  margin-top: 10px;
 }
 .details{
   text-align: center;
-  font-family: 'Yanone Kaffeesatz'
+  font-family: 'Yanone Kaffeesatz';
+  font-size: 20px;
 }
 
 .comment{
@@ -42,9 +43,6 @@ h1{
 .lIng{
   list-style: none;
 }
-.details{
-  font-size: 20px;
-}
 ol{
   display: inline-block;
 }
@@ -55,6 +53,7 @@ textarea{
 }
 .recipe-details{
   border-bottom: 1px solid black;
+  font-size: 40px;
 }
 .step-details{
   border-bottom: 1px solid black;
@@ -63,4 +62,7 @@ textarea{
 }
 h4{
   text-align: center;
+}
+h1{
+  font-size: 50px;
 }

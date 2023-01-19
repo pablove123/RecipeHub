@@ -11,7 +11,9 @@ body {
   color: #42213D;
   font-family: 'Caveat'
 }
-
+body{
+  background-image:url(https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=10);
+}
 nav {
   background-color: #42213D;
   color: #F3E8EE;
