@@ -46,7 +46,7 @@
       <% } %> 
   </div>
   <div class="step-details">
-    <h2>Steps:</h3>
+    <h2>Steps:</h2>
       <% if (recipe.owner.equals(user?.profile._id)) { %>
         <form action="/recipes/<%= recipe._id %>/steps" method="POST">
           <textarea placeholder="Type steps in order" type="text" name="step">
@@ -66,25 +66,26 @@
 </div>
 
 <div class="comment">
-<h3>Comments:</h3>
+  <h3><div id="commentTitle">Comments:</div></h3>
+    <h4>
+      <% recipe.comments.forEach(function(comment) { %> 
+          <li class= "comments">
+            <form action="/recipes/<%=recipe._id  %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+            <%=comment.comment %> - <%= recipe.owner.name  %>  
+            <% if (recipe.owner.equals(user?.profile._id)) { %>
+            <button type="submit" >X</button>
+            <% } %>
+            </form>
+          </li>
+        <% }) %> 
+    </h4>
+</div>
 <h4> 
   <form action="/recipes/<%= recipe._id %>/comments" method="POST">
   <textarea type="text" name="comment">
   </textarea>
   <button class="addCom" type="submit">Add Comment</button>
   </form>
-</h4>
-<h4>
-  <% recipe.comments.forEach(function(comment) { %> 
-      <li class= "comments">
-        <form action="/recipes/<%=recipe._id  %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-        <%=comment.comment %> - <%= recipe.owner.name  %>  
-        <% if (recipe.owner.equals(user?.profile._id)) { %>
-        <button type="submit" >X</button>
-        <% } %>
-        </form>
-      </li>
-    <% }) %> 
 </h4>
 </div>
 <%- include('../partials/footer') %>
