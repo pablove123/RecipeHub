@@ -75,7 +75,7 @@ function update(req, res) {
       req.body.tasty = !!req.body.tasty
       recipe.updateOne(req.body)
       .then(()=> {
-        res.redirect(`/recipe/${recipe._id}`)
+        res.redirect(`/recipes/${recipe._id}`)
       })
     } else {
       res.redirect("/recipes")

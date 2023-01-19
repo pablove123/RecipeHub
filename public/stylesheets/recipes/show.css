@@ -51,6 +51,13 @@ h1{
   color: #F3E8EE;
   margin-bottom: 30px;
 }
+.delIng{
+  height: 30px;
+  border-radius: 10px;
+  background-color: #42213D;
+  color: #F3E8EE;
+  margin-bottom: 10px;
+}
 .lIng{
   list-style: none;
 }
@@ -82,4 +89,16 @@ h2{
 }
 #commentTitle{
   font-size: 40px;
+}
+textarea{
+  background-color: #F3E8EE;
+  border: 4px solid #42213D;
+  border-radius: 10px;
+  height: 30px;
+}
+select{
+  background-color: #F3E8EE;
+  border: 4px solid #42213D;
+  border-radius: 10px;
+  height: 40px;
 }

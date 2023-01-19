@@ -21,3 +21,9 @@ button{
 button:hover{
   background-color: #915d89 ;
 }
+input{
+  background-color: #F3E8EE;
+  border: 4px solid #42213D;
+  border-radius: 10px;
+  height: 30px;
+}

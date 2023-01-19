@@ -27,7 +27,7 @@
           method="POST">
           <%= ingredient.name %></a>     
           <% if (recipe.owner.equals(user?.profile._id)) { %>
-          <button  class="addIng" type="submit">Delete</button>
+          <button  class="delIng" type="submit">Delete</button>
           <% } %> 
         </form>
       </li>
