@@ -1,3 +1,28 @@
 .picture{
   border-radius: 50px;
 }
+.card{
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #42213D;
+  font-family:'Yanone Kaffeesatz'; 
+}
+.card:hover {
+  background-color: #7c4674;
+}
+ul{
+  list-style: none;
+}
+a:visited { 
+  text-decoration: none; 
+  color: #F3E8EE;
+}
+a:link { 
+  text-decoration: none; 
+}

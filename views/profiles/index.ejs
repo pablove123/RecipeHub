@@ -3,14 +3,17 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <div class="card-container">
+  <div class="cards">
     <ul>
     <% profiles.forEach(profile => { %>
-      <li class="card-title">
-        <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
-            <%= profile.name %> <img class="picture"
+      <li >
+        <div class="card">
+          <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
+            <img class="picture"
             src="<%= profile.avatar %>" 
             alt="<%= profile.name %>'s avatar">
+            <%= profile.name %> 
+          </div>
         </a>
       </li>
     <% }) %>
