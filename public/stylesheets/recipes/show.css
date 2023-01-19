@@ -70,13 +70,14 @@ textarea{
   height: 20px;
 }
 .recipe-details{
-  border-bottom: 1px solid black;
+  border-bottom: 3px dashed #42213D;
   font-size: 40px;
 }
 .step-details{
-  border-bottom: 1px solid black;
+  border-bottom: 3px dashed #42213D;
   text-align: center;
   margin-top: 0;
+  font-size: 25px;
 }
 h4{
   text-align: center;
