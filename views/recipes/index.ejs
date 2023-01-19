@@ -9,14 +9,16 @@
     <li> <form 
       action="/recipes/<%= recipe._id %>?_method=DELETE"
       method="POST">
+      <div class="recipes">
       <a href="/recipes/<%= recipe._id %>" class="recipe"> <span class="recipe-name"><%= recipe.name %></span></a>     
       - <span class="owner"><%= recipe.owner.name %></span>
       <% if (recipe.owner.equals(user?.profile._id)) { %>
-      <button type="submit">Delete Recipe</button>
+      <button class="delBtn"type="submit">Delete Recipe</button>
       <% } %>
       </form>
     </li>
     <% }) %> 
+  </div>
 </ul>
 </div>
 

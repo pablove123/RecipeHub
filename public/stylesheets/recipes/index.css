@@ -14,14 +14,27 @@
   .recipe{
     font-size: 30px;
   }
+  
   .owner{
     font-size: 20px;
   }
   ul{
     font-family: 'Yanone Kaffeesatz';
   }
+  .recipes{
+    border: 3px solid #42213D;
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  a:link { 
+    text-decoration: none; 
+  }
+  a:hover { 
+    color:#9e5294; 
+  }
 
-  form > button{
+  .delBtn{
     background-color: #42213D;
     color: #F3E8EE;
     font-family:'Yanone Kaffeesatz'; 
