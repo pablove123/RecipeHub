@@ -1,8 +1,8 @@
 # RecipeHub
-![alt text](https://pbs.twimg.com/media/FmyMnDYagAEcpW6?format=jpg&name=small)
+![alt text](https://pbs.twimg.com/media/Fm0JVqPaYAArYRM?format=jpg&name=small)
 ## [OPEN SITE HERE](https://recipehub.fly.dev/)
 
-### Welcome to RecipeHub! A 
+### Welcome to RecipeHub! An App were users can view recipes! 
 
 
 #### Technologies Used 💻
