@@ -73,7 +73,7 @@
             <form action="/recipes/<%=recipe._id  %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
             <%=comment.comment %> - <%= recipe.owner.name  %>  
             <% if (recipe.owner.equals(user?.profile._id)) { %>
-            <button type="submit" >X</button>
+            <button type="submit" class="delCom" >X</button>
             <% } %>
             </form>
           </li>
