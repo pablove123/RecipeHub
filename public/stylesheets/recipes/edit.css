@@ -1,0 +1,48 @@
+h1{
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Yanone Kaffeesatz';
+}
+h2{
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Yanone Kaffeesatz';
+}
+#time-input{
+  width: 30px;
+}
+#easy-checkbox{
+  width: 20px;
+  height: 20px;
+  margin-top: 30px;
+}
+#difficulty-select{
+border-radius: 5px;
+line-height: 30px;
+height: 30px;
+}
+
+#difficulty-select{
+  margin-top: 30px;
+}
+input{
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+#addBtn{
+  margin-top: 30px;
+  width: 13% ;
+  line-height: 30px;
+  font-family:'Yanone Kaffeesatz'; 
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #42213D;
+  color: #F3E8EE;
+}
+
+
+#addBtn:hover{
+  background-color: #915d89 ;
+}

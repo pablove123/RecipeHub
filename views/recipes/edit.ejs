@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/recipes/edit.css" />
 <%- include('../partials/nav') %>
 <div class="body">
 <h1><%= title %> </h1>
@@ -7,7 +8,7 @@
 
     <label for="name-input">Recipe Name:</label>
     <input type="text" value="<%= recipe.name %>" name="name" id="name-input" autocomplete="off">
-
+    <br>
     <label for="difficulty-select">Select Difficulty</label>
     <select name="difficulty" id="difficulty-select">
       <option value="<%= recipe.difficulty %>">
@@ -17,17 +18,17 @@
       <option>Medium</option>
       <option>Hard</option>
     </select>
-
+    <br>
     <label for="cuisine-input">Cuisine:</label>
     <input type="text" value="<%= recipe.cuisine %>" name="cuisine" id="cuisine-input" autocomplete="off">
-
+    <br>
     <label for="time-input">Time Needed(in minutes):</label>
     <input type="text" value="<%= recipe.time %>" name="time" id="time-input" autocomplete="off">
-
+    <br>
     <label for="easy-checkbox">Tasty?:</label>
     <input <%= recipe.tasty ? 'checked' : '' %> type="checkbox" name="tasty" id="easy-checkbox">
-
-    <button type="submit"> Update Recipe </button>
+    <br>
+    <button id="addBtn" type="submit"> Update Recipe </button>
   </form>
 </h2>
 </div>

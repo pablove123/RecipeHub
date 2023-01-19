@@ -60,7 +60,7 @@ function edit(req,res){
   .then(recipe=>{
     res.render(`recipes/edit`, {
       recipe,
-      title: "Edit Movie"
+      title: "Edit Recipe"
     })
   })
   .catch(err => {
@@ -75,7 +75,7 @@ function update(req, res) {
       req.body.tasty = !!req.body.tasty
       recipe.updateOne(req.body)
       .then(()=> {
-        res.redirect(`/recipe/${recipe._id}`)
+        res.redirect(`/recipes`)
       })
     } else {
       res.redirect("/recipes")
