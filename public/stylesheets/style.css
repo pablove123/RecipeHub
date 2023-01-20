@@ -36,9 +36,6 @@ main {
   padding: 10px;
   height: 200px;
 }
-/* .right {
-  margin-left: auto;
-} */
 nav > a {
   text-decoration: none;
   font-size: 30px;

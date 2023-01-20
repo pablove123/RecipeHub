@@ -2,7 +2,7 @@
 ![alt text](https://pbs.twimg.com/media/Fm0JVqPaYAArYRM?format=jpg&name=small)
 ## [OPEN SITE HERE](https://recipehub.fly.dev/)
 
-### Welcome to RecipeHub! An App were users can view and create recipes! 
+### Welcome to RecipeHub! An App where users can view and create recipes! 
 
 
 #### Technologies Used 💻
@@ -10,6 +10,7 @@
 - Express
 - Mongoose
 - Fly.io
+- MongoDB
 - JavaScript
 - HTML 
 - CSS
